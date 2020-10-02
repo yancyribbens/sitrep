@@ -1,13 +1,11 @@
-{
-  "@context": "https://www.w3.org/ns/did/v1",
-  "id": "did:wip:123456789abcdefghi",
-  "publicKey": [{
-    "id": "did:example:123456789abcdefghi#key-1",
-    "type": "RsaVerificationKey2018",
-    "controller": "did:example:123456789abcdefghi",
-    "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
-  },],
-  "authentication": [
-    "#key-1"
-  ]
-}
+Rust notes:
+
+To Rust debug cargo tests in GDB:
+
+1) Run:  "cargo test" and observe filename, for example: "target/debug/deps/starbreeze-a286203a95999cae"
+2) Run: "rust-gdb <filename>"
+3) I've found "info functions" to be handy way to see all symbols
+4) Once you know the filename and line number, set a breakpoint: break src/filename.rs:linenumber
+5) Type: "run" to start your program
+6) Type: "layout src" to get a visual layout of the file and the break point
+
